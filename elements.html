@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			
+			/* Background blur */
+.blur-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply background blur */
+    z-index: 998; /* Ensure it appears behind the popup */
+    display: none; /* Initially hidden */
+}
+
+/* Popup container */
+.popup {
+    position: fixed; /* Changed from relative to fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #6f26ed;
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Ensure it appears on top of the background blur */
+    display: none; /* Initially hidden */
+}
+	
+			/* Popup content */
+			.popup-content {
+				
+				text-align: left;
+				line-height: 1.2;
+				margin-bottom: 0.5em;
+			}
+	
+			/* Close button */
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+	
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			label {
+				padding: 12px 12px 12px 0;
+				display: inline-block;
+			  }
+			  input[type=text]{
+				width: 100%;
+				padding: 12px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				resize: vertical;
+			  }
+			  input[type=password]{
+				width: 100%;
+				padding: 12px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				resize: vertical;
+			  }
+			  input[type=submit]{
+				background-color: #4628dc;
+				color: white;
+				padding: 1px 20px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				float: right;
+				align-self: center;
+			  }
+			  
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Background blur -->
+		<div id="blurBg" class="blur-bg"></div>
+
+		<!-- Popup container -->
+		<div id="loginPopup" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="closePopup()">&times;</span>
+				<h2>Login</h2>
+				<p>Welcome to the comment section of my portfolio! Whether you have questions about my projects, suggestions for improvement, or just want to share your thoughts on the code, feel free to leave a comment below. I value your feedback and look forward to engaging with you.</p>
+				<form>
+					<label for="username">Username:</label><br>
+					<input type="text" id="username" name="username"><br>
+					<label for="password">Password:</label><br>
+					<input type="password" id="password" name="password"><br><br>
+					<input type="submit" value="Submit" onclick="closePopup()">
+				</form>
+			</div>
+		</div>
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">About</a></li>
+						<li><a href="elements.html"  class="active">Projects</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Projects</h1>
+
+							<!-- Text -->
+								<section>
+									<h2>Handwriting Recognition</h2>
+									<h4>Abstract</h4>
+									<p>Pattern recognition is one of the main application of ML. Patterns are usually recognized with the help of large image data-set.
+										Handwriting recognition is an application of pattern recognition through image. By using such concepts, we can
+										train computers to read letters and numbers belonging to any language present in an image. There exists several
+										methods by which we can recognize hand-written characters. We will be discussing some of the methods in this
+										paper.
+									</p>
+									<h4>Introduction</h4>
+									<p>In the field of Machine Learning, recognition of objects has become most sought one. Some of the examples of
+										object recognition are Face recognition, Hand write recognition, Disease detection etc. All these things can
+										happen through large set of image data set. These image data set will contain both positive and negative data
+										regarding that domain. This helps the algorithm to classify the unknown data in better ways. Hand write
+										recognition is a new technology that will be useful in this 21st century. It can act as base functionality for the
+										birth of new requirements. For example, a blind man cannot read news paper unless braille format exists. In this
+										case we can train the algorithm to recognize characters in the news paper, store them as text and convert the text
+										to speech. This can help lot of blind people to ease their daily work. The second application of hand write
+										recognition could be language translation. In this case when a person is dealing with non-native language, he
+										can just take a image of a document and send it to the hand write recognition algorithm. This algorithm can
+										recognize the characters in image and convert them to text. Then the text can be converted to desired language
+										of choice.
+										One more application of hand write recognition would be, processing of large set of paper document like answer
+										scripts. With the help of hand-write recognition and AI, the answer scripts can be evaluated without human
+										involvement. For all above mentioned scenarios, hand write recognition acts as base case to be resolved. Hand
+										write recognition is one of the type of Optical Character Recognition(OCR). OCR is identification of text, which
+										may be printed or hand-written. In OCR, the document is captured via camera as image and can be converted to
+										desired formats like PDFs. Then the file is fed to the algorithm for character recognition. This can drastically
+										reduce human involvement in certain scenarios. </p>
+									<h4>Phases of hand-write recognition</h4>
+									<ol>
+										<li>Image source</li>
+										  <p>
+											This phase comes in offline hand-written character recognition. Image source can be from any digitized tool. A
+											scanner or a camera captures the image and is sent to next phase.
+										  </p>
+										<li>Pre-processing</li>
+										  <p>
+											Pre-processing is sequence of operation, that improves the quality of image and hence increases the accuracy of image. For the hand-written character recognition process, the following pre-processing techniques are followed-
+											Noise remove, Binarization , Morphological operation.
+										  </p>
+										<li>Segmentation</li>
+										   <p>
+											Segmentation is a mechanism that extracts individual characters in the image. There exists two types of
+											segmentation. They are Implicit segmentation and Explicit segmentation. In implicit segmentation the words are
+											recognized without segmentation process. But in explicit segmentation, words are predicted by extracting
+											individual character
+										   </p>
+										<li>Feature-extraction</li>
+										   <p>
+											This is the important phase in the recognition process, and the algorithm of recognition starts from here. Each
+character contains its own features. It contains group of rules where each rule explains feature of a character.
+Extraction of such features is done in this phase.
+										   </p>
+										<li>Classification</li>
+										   <p>
+											By this time, the training would have completed and the testing of input data starts. The testing data would pass
+all the above process and the varying probabilities are assigned to the matching rules. The rule with highest
+probability is selected and the corresponding class-label is made recognized character.
+										   </p>
+									</ol>
+									<p>The <a href="https://github.com/pavan69r/Character-Recg."><b>Code</b></a> for the above is  here.</p>
+									<hr />
+									<p>Welcome to the comment section of my portfolio! Whether you have questions about my projects, suggestions for improvement, or just want to share your thoughts on the code, feel free to leave a comment below. I value your feedback and look forward to engaging with you.</p>
+									<hr />
+									
+
+							<!-- Form -->
+								<section>
+									<h2>Form</h2>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Category -</option>
+													<option value="1">Query</option>
+													<option value="1">Suggestions</option>
+													<option value="1">Sharing Thoughts</option>
+												</select>
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><a type="submit" onclick="openPopup()" class="button">Submit</a></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+								<!-- Text -->
+								<section>
+									<h2>FlappyBird</h2>
+									<p>Flappy Bird is an endless game that includes a bird controlled by the player. The objective of this game is to prevent the bird from falling on the ground or colliding with the obstacles like pipes. Every time the bird passes through the pipes, the scores increment by one. The game ends when the bird collides with the pipes or falls on the ground due to gravity.</p>
+									<h4>Explanation:</h4>
+									<p>
+
+										In the above snippet of code, we have used the init() function to initialize the pygame window. We have then created an object of the Clock() class of the pygame.time module and defined a variable to store the game's FPS. We have then defined the width and height and used the set_mode() function of the pygame.display module to set the size of the screen. We have then set the title of the application using the set_caption() function of the pygame.display module. We have then declared and initialized some of the game variables specifically to perform scrolling. We have then used the load() function of the pygame.image module to load the images to display the background and base.
+										
+										We have then set the game_run variable value to True and used the while loop to run the game. Within this loop, we have used the tick() function to set the game clock to the FPS we defined earlier. We have then drawn the background using the blit() function. We have then drawn the base using the blit() function and set it to scroll by subtracting the scrolling speed from the base scroll value, and if the absolute value of the base scroll is greater than 70 pixels, set the base scroll value back to 0. We have then used the for-loop to iterate through the events of the game and set the game_run variable value to False if the event type is the QUIT constant of the pygame module. We then used the update() function to update the events in the game. At last, we used the quit() function to quit the game.</p>
+								</section>
+								<p>The <a href="https://github.com/pavan69r/FlappyBird"><b>Code</b></a> for the above is  here.</p>
+									<hr />
+									<p>Welcome to the comment section of my portfolio! Whether you have questions about my projects, suggestions for improvement, or just want to share your thoughts on the code, feel free to leave a comment below. I value your feedback and look forward to engaging with you.</p>
+									<hr />
+								<!-- Form -->
+								<section>
+									<h2>Form</h2>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Category -</option>
+													<option value="1">Query</option>
+													<option value="1">Suggestions</option>
+													<option value="1">Sharing Thoughts</option>
+												</select>
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><a type="submit" onclick="openPopup()" class="button">Submit</a></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+			</div>
+        </section>
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; 2024 Pavan R</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>// Function to display the login popup
+				function openPopup() {
+				  document.getElementById("loginPopup").style.display = "block";
+				  document.getElementById("blurBg").style.display = "block";
+				}
+				
+				// Function to close the login popup
+				function closePopup() {
+				  document.getElementById("loginPopup").style.display = "none";
+				  document.getElementById("blurBg").style.display = "none";
+				}
+			</script>	
+
+	</body>
+</html>
