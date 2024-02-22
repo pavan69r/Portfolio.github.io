@@ -5,88 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="scripts.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			
-			/* Background blur */
-.blur-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Apply background blur */
-    z-index: 998; /* Ensure it appears behind the popup */
-    display: none; /* Initially hidden */
-}
-
-/* Popup container */
-.popup {
-    position: fixed; /* Changed from relative to fixed */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #6f26ed;
-    padding: 50px;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999; /* Ensure it appears on top of the background blur */
-    display: none; /* Initially hidden */
-}
-	
-			/* Popup content */
-			.popup-content {
-				
-				text-align: left;
-				line-height: 1.2;
-				margin-bottom: 0.5em;
-			}
-	
-			/* Close button */
-			.close {
-				color: #aaa;
-				float: right;
-				font-size: 28px;
-				font-weight: bold;
-			}
-	
-			.close:hover,
-			.close:focus {
-				color: black;
-				text-decoration: none;
-				cursor: pointer;
-			}
-			label {
-				padding: 12px 12px 12px 0;
-				display: inline-block;
-			  }
-			  input[type=text]{
-				width: 100%;
-				padding: 12px;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				resize: vertical;
-			  }
-			  input[type=password]{
-				width: 100%;
-				padding: 12px;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				resize: vertical;
-			  }
-			  input[type=submit]{
-				background-color: #4628dc;
-				color: white;
-				padding: 1px 20px;
-				border: none;
-				border-radius: 4px;
-				cursor: pointer;
-				float: right;
-				align-self: center;
-			  }
-			  
-		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Background blur -->
@@ -98,15 +18,34 @@
 				<span class="close" onclick="closePopup()">&times;</span>
 				<h2>Login</h2>
 				<p>Welcome to the comment section of my portfolio! Whether you have questions about my projects, suggestions for improvement, or just want to share your thoughts on the code, feel free to leave a comment below. I value your feedback and look forward to engaging with you.</p>
-				<form>
-					<label for="username">Username:</label><br>
-					<input type="text" id="username" name="username"><br>
-					<label for="password">Password:</label><br>
-					<input type="password" id="password" name="password"><br><br>
-					<input type="submit" value="Submit" onclick="closePopup()">
+				<form action="#" method="post">
+					<input type="text" name="username" placeholder="Username" required>
+					<input type="password" name="password" placeholder="Password" required>
+					<input type="submit" value="Login">
 				</form>
+				  <div class="signup-link">
+					<p>Don't have an account? <a href="#loginPopup1" onclick="openPopup1()">Sign Up</a></p>
+				  </div>
 			</div>
 		</div>
+		<div id="blurBg1" class="blur-bg"></div>
+		<div id="loginPopup1" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="closePopup1()">&times;</span>
+			<h2>Sign Up</h2>
+			<form action="#" method="post">
+			  <input type="text" name="name" placeholder="Name" required>
+			  <input type="tel" name="phone" placeholder="Phone Number" required>
+			  <input type="email" name="email" placeholder="Email" required>
+			  <input type="password" name="password" placeholder="Password" required>
+			  <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+			  <input type="submit" value="Sign Up">
+			</form>
+			<div class="signin-link">
+			  <p>Already have an account? <a href="#loginPopup" onclick="closePopup1()">Sign In</a></p>
+			</div>
+		  </div>
+		  </div>
 
 		<!-- Header -->
 			<header id="header">
@@ -292,18 +231,7 @@ probability is selected and the corresponding class-label is made recognized cha
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>// Function to display the login popup
-				function openPopup() {
-				  document.getElementById("loginPopup").style.display = "block";
-				  document.getElementById("blurBg").style.display = "block";
-				}
-				
-				// Function to close the login popup
-				function closePopup() {
-				  document.getElementById("loginPopup").style.display = "none";
-				  document.getElementById("blurBg").style.display = "none";
-				}
-			</script>	
+			<script src="assets/js/popup.js"></script>	
 
 	</body>
 </html>
